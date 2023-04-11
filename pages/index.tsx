@@ -34,18 +34,22 @@ export default function Home() {
             >
               Home
             </a>
-            <a
-              className="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-            >
-              Data
-            </a>
-            <a
-              className="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-            >
-              References
-            </a>
+            <Link legacyBehavior href="/posts/first-post" passHref>
+              <a
+                className="me-3 py-2 link-body-emphasis text-decoration-none"
+                href="#"
+              >
+                Data
+              </a>
+            </Link>
+            <Link legacyBehavior href="/posts/references" passHref>
+              <a
+                className="me-3 py-2 link-body-emphasis text-decoration-none"
+                href="#"
+              >
+                References
+              </a>
+            </Link>
           </nav>
         </div>
       </header>

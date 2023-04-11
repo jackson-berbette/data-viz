@@ -21,7 +21,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-import { Dropdown } from "@nextui-org/react";
+import { Container, Dropdown } from "@nextui-org/react";
 
 export const options = {
   responsive: true,
@@ -77,18 +77,21 @@ export default function FirstPost() {
                 Home
               </a>
             </Link>
+
             <a
               className="me-3 py-2 link-body-emphasis text-decoration-none"
               href="#"
             >
               Data
             </a>
-            <a
-              className="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-            >
-              References
-            </a>
+            <Link legacyBehavior href="/posts/references" passHref>
+              <a
+                className="me-3 py-2 link-body-emphasis text-decoration-none"
+                href="#"
+              >
+                References
+              </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -105,30 +108,41 @@ export default function FirstPost() {
         </div>
         <div className="col">
           <h2> Query Selection</h2>
-          <Dropdown>
-            <Dropdown.Button flat>Select Time Period</Dropdown.Button>
-            <Dropdown.Menu aria-label="Static Actions">
-              <Dropdown.Item key="housing">Housing Crisis (USA)</Dropdown.Item>
-              <Dropdown.Item key="gulf">Gulf War</Dropdown.Item>
-              <Dropdown.Item key="covid">COVID-19</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown>
-            <Dropdown.Button flat>Financial Data</Dropdown.Button>
-            <Dropdown.Menu aria-label="Static Actions">
-              <Dropdown.Item key="gdp">GDP</Dropdown.Item>
-              <Dropdown.Item key="currency">Currency Exchange</Dropdown.Item>
-              <Dropdown.Item key="faang">FAANG Stock Price</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown>
-            <Dropdown.Button flat>Calculation</Dropdown.Button>
-            <Dropdown.Menu aria-label="Static Actions">
-              <Dropdown.Item key="peak">Highest Peak</Dropdown.Item>
-              <Dropdown.Item key="rolling">Rolling Average</Dropdown.Item>
-              <Dropdown.Item key="growth">% Growth</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <div className="container">
+            <div className="col">
+              <div className="p-3 "></div>
+              <Dropdown>
+                <Dropdown.Button flat>Time Period</Dropdown.Button>
+                <Dropdown.Menu aria-label="Static Actions">
+                  <Dropdown.Item key="housing">
+                    Housing Crisis (USA)
+                  </Dropdown.Item>
+                  <Dropdown.Item key="gulf">Gulf War</Dropdown.Item>
+                  <Dropdown.Item key="covid">COVID-19</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>{" "}
+              <div className="p-3 "></div>
+              <Dropdown>
+                <Dropdown.Button flat>Financial Data</Dropdown.Button>
+                <Dropdown.Menu aria-label="Static Actions">
+                  <Dropdown.Item key="gdp">GDP</Dropdown.Item>
+                  <Dropdown.Item key="currency">
+                    Currency Exchange
+                  </Dropdown.Item>
+                  <Dropdown.Item key="faang">FAANG Stock Price</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <div className="p-3 "></div>
+              <Dropdown>
+                <Dropdown.Button flat>Calculation</Dropdown.Button>
+                <Dropdown.Menu aria-label="Static Actions">
+                  <Dropdown.Item key="peak">Highest Peak</Dropdown.Item>
+                  <Dropdown.Item key="rolling">Rolling Average</Dropdown.Item>
+                  <Dropdown.Item key="growth">% Growth</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </div>
         </div>
       </div>
     </>
